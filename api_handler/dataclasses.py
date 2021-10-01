@@ -1,5 +1,6 @@
 import datetime
-from frontend_icon_handler import icon_handler
+#from frontend_icon_handler import icon_handler
+from frontend_icon_handler.icon_handler_class import IconHandler
 
 
 class ForecastData:
@@ -23,7 +24,7 @@ class ForecastDay:
         return datetime.datetime.strptime(self.value, '%Y-%m-%dZ').strftime('%A')
 
 
-class ForecastSinglePoint:
+class ForecastSinglePoint(IconHandler):
     def __init__(self, pd):
         self.minutes: int = int(pd['$'])
         self.hours = self.minutes / 60
@@ -77,9 +78,3 @@ class ForecastSinglePoint:
             "30": "Thunder"
         }
         return weather_type_dict[self.weather_type_val]
-
-    def get_weather_icon(self):
-        return icon_handler.get_rendered_weather_icon_element(self.weather_type_val)
-
-    def get_windspeed_icon(self):
-        return icon_handler.get_rendered_windspeed_icon_element(self.wind_speed)
