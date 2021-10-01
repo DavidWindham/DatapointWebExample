@@ -1,14 +1,23 @@
 from flask import Flask, render_template, request
 import json
+
 import settings as settings
-
-from api_handler.datapoint_api import Datapoint
-
 from api_handler.dataclasses import ForecastData
 
-datapoint_handler = Datapoint(api_key=settings.DATAPOINT_API_KEY)
+# If an API key isn't set in the .ENV file, a different class is loaded that uses pre-downloaded files
+if settings.DATAPOINT_API_KEY != "":
+    from api_handler.datapoint_api import Datapoint
+    datapoint_handler = Datapoint(api_key=settings.DATAPOINT_API_KEY)
+else:
+    """
+    If this version is used, this example will work, but you won't have the full range of functionality
+    The number of forecast locations is limited to the 20 closest to Buckingham Palace
+    Each of these locations still have forecast data as of 01/10/21 at 12:00
+    """
+    from api_handler.datapoint_api_NOKEY import DatapointNOKEY
+    datapoint_handler = DatapointNOKEY()
+
 datapoint_webapp = Flask(__name__)
-datapoint_webapp.debug = True
 
 
 @datapoint_webapp.route('/')

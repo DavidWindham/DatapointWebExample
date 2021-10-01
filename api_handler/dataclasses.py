@@ -19,7 +19,6 @@ class ForecastDay:
         self.points = [ForecastSinglePoint(x) for x in day_data['Rep']]
 
     def get_day_name(self):
-        # datetime.datetime.strptime('January 11, 2010', '%B %d, %Y').strftime('%A')
         return datetime.datetime.strptime(self.value, '%Y-%m-%dZ').strftime('%A')
 
 

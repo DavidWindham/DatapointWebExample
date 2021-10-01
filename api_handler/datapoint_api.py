@@ -1,4 +1,4 @@
-from .datapoint_functions import url_get, haversine_distance
+from .datapoint_functions import url_get, get_closest_location
 
 
 class Datapoint:
@@ -11,7 +11,7 @@ class Datapoint:
     """
 
     def get_forecast_locations(self):
-        locations_json = self.get_forecast_location_raw()['Locations']['Location']
+        locations_json = self.get_forecast_locations_raw()['Locations']['Location']
         return locations_json
 
     def get_forecast_for_location_id(self, location_id):
@@ -29,14 +29,14 @@ class Datapoint:
         Iterates over all locations available and returns the closest one
         """
         locations = self.get_forecast_locations()
-        return self.get_closest_location(locations, lat, long)
+        return get_closest_location(locations, lat, long)
 
     """
     Functions for historic data retrieval - wxobs
     """
 
     def get_historic_locations(self):
-        locations = self.get_historic_location_raw()['Locations']['Location']
+        locations = self.get_historic_locations_raw()['Locations']['Location']
         return locations
 
     def get_historic_for_location_id(self, location_id):
@@ -46,31 +46,22 @@ class Datapoint:
 
     def get_historic_for_coordinates(self, lat, long):
         locations = self.get_historic_locations()
-        location_id = self.get_closest_location(locations, lat, long)['id']
+        location_id = get_closest_location(locations, lat, long)['id']
         return self.get_historic_for_location_id(location_id)
 
     def get_historic_location_for_coordinates(self, lat, long):
         locations = self.get_historic_locations()
-        return self.get_closest_location(locations, lat, long)
+        return get_closest_location(locations, lat, long)
 
     """
     Auxilary functions
     """
 
-    def get_forecast_location_raw(self):
+    def get_forecast_locations_raw(self):
         url = self.base_url.format("wxfcs", "sitelist", "")
         return url_get(url).json()
 
-    def get_historic_location_raw(self):
+    def get_historic_locations_raw(self):
         url = self.base_url.format("wxobs", "sitelist", "")
         return url_get(url).json()
 
-    def get_closest_location(self, locations: list, lat: float, long: float):
-        """
-        Iterates over every location, finds and returns the closest only
-        """
-        for single_location in locations:
-            single_location['distance'] = haversine_distance(float(single_location['latitude']),
-                                                             float(single_location['longitude']),
-                                                             lat, long)
-        return min(locations, key=lambda x: x['distance'])
