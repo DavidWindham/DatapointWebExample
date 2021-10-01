@@ -26,7 +26,11 @@ Pip -r the requirements.txt and run the application with "python app.py". Everyt
 
 
 
-## With Thanks
+## Credit
 * [Met Office Datapoint](https://www.metoffice.gov.uk/services/data/datapoint)
 * [Martinjc UK-TopoJSON Data](https://martinjc.github.io/UK-GeoJSON)
 * [ErikFlowers Weather Icons](https://github.com/erikflowers/weather-icons)
+
+
+## Licensing
+* Code licensed under [MIT License](https://opensource.org/licenses/mit-license.html)
