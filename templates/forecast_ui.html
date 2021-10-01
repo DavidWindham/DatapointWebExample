@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block external_script_block %}
+    <script type=text/javascript src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/weather-icons.min.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="row combined-area-parent">
+        <div class="col-md-8 map-area-parent">
+            <div id="map_area" class="map-area"></div>
+            <div id="bottom_map_area" class="bottom-map-area">
+                <p class="bottom-area-text" id="hover_county_div">⠀</p>
+            </div>
+        </div>
+        <div id="forecast_aside" class="col-md-4 forecast-area-parent"></div>
+    </div>
+{% endblock %}

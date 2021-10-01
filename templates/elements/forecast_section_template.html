@@ -1,0 +1,11 @@
+{% from "elements/forecast_section_broad_macros.html" import render_days_pills, render_days_container %}
+
+<div>
+    <div class="forecast-location-name">
+        <h1>{{ location_data.name }}</h1>
+    </div>
+    <div class="forecast-data-section">
+        {{ render_days_pills(location_data.days) }}
+        {{ render_days_container(location_data.days) }}
+    </div>
+</div>

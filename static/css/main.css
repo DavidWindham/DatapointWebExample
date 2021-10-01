@@ -1,0 +1,175 @@
+html {
+    height: 100%;
+}
+
+body{
+    height: 95%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar{
+    height: 5%;
+    border-bottom: #34ff00 0.2rem solid;
+}
+
+.combined-area-parent {
+    height: 100%;
+}
+
+.map-area-parent {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.map-area {
+    background-color: aqua;
+    height: 95%
+}
+
+.bottom-map-area {
+    background-color: #484848;
+    height: 5%;
+    text-align: center;
+}
+.bottom-area-text{
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+path {
+    stroke: #484848;
+    stroke-width: 0.1px;
+    fill: #d6d6d6;
+}
+
+
+.forecast_location{
+    fill: orangered;
+}
+.forecast_location_hover{
+    fill: azure;
+}
+.forecast_location_selected{
+    fill: blue;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+.main-container {
+    min-height: 100%;
+    height: 100%;
+}
+
+.map_section {
+    fill: lightgreen;
+    stroke: black;
+    stroke-width: .25;
+}
+
+.map_section_hover {
+    fill: darkgreen;
+}
+
+
+.forecast-area-parent {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: rgb(38, 38, 38);
+}
+
+.forecast-location-name {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+}
+
+.forecast-data-section {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: rgb(38, 38, 38);
+    color: white
+}
+
+.forecast-time {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 2rem;
+}
+
+.forecast-element-parent {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.nav-link {
+    color: white;
+}
+
+.forecast-single-datapoint {
+    margin: 1rem;
+    background-color: cornflowerblue;
+}
+
+.forecast-elements {
+
+}
+
+.forecast-single-element-collective {
+    background-color: slategray;
+    padding: 0.2rem;
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+    display: flex;
+}
+.wrap-forecast-single-element-collective{
+    background-color: slategray;
+    text-align: center;
+    display: block !important;
+}
+
+.forecast-element {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.forecast-element-label {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.weather_icon {
+    justify-content: center;
+    align-items: center;
+    display: flex !important;
+    text-align: center;
+    font-size: 50px;
+    min-height: 100%;
+}
+
+.wi {
+    line-height: normal;
+}
+
+.temperature_text{
+    font-size: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.wind-speed-text{
+    font-size: 1.2rem;
+}
