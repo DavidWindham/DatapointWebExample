@@ -2,12 +2,12 @@ html {
     height: 100%;
 }
 
-body{
+body {
     height: 95%;
     font-family: "Montserrat", sans-serif;
 }
 
-.navbar{
+.navbar {
     height: 5%;
     border-bottom: #34ff00 0.2rem solid;
 }
@@ -33,7 +33,8 @@ body{
     height: 5%;
     text-align: center;
 }
-.bottom-area-text{
+
+.bottom-area-text {
     font-size: 1.5rem;
     color: white;
 }
@@ -46,13 +47,15 @@ path {
 }
 
 
-.forecast_location{
+.forecast_location {
     fill: orangered;
 }
-.forecast_location_hover{
+
+.forecast_location_hover {
     fill: azure;
 }
-.forecast_location_selected{
+
+.forecast_location_selected {
     fill: blue;
 }
 
@@ -134,7 +137,8 @@ path {
     justify-content: center;
     display: flex;
 }
-.wrap-forecast-single-element-collective{
+
+.wrap-forecast-single-element-collective {
     background-color: slategray;
     text-align: center;
     display: block !important;
@@ -165,11 +169,12 @@ path {
     line-height: normal;
 }
 
-.temperature_text{
+.temperature_text {
     font-size: 2rem;
     margin-top: auto;
     margin-bottom: auto;
 }
-.wind-speed-text{
+
+.wind-speed-text {
     font-size: 1.2rem;
 }

@@ -1,5 +1,5 @@
-var DEFAULT_POINT_RADIUS = 0.5
-var SELECTED_POINT_RADIUS = 2;
+const DEFAULT_POINT_RADIUS = 0.5
+const SELECTED_POINT_RADIUS = 2;
 
 var svg;
 var projection;
