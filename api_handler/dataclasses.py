@@ -1,5 +1,4 @@
 import datetime
-#from frontend_icon_handler import icon_handler
 from frontend_icon_handler.icon_handler_class import IconHandler
 
 
