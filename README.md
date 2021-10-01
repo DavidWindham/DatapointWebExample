@@ -12,7 +12,7 @@ Not required but for full functionality, sign up and request an API key from Dat
 Example.py gives a quick insight into the datapoint API, only the [requests library](https://github.com/psf/requests) is needed for this script.
 
 ### Flask application
-"pip -r requirements.txt" and run the application with "python app.py". Everything else is provided or is delivered via CDN.
+"pip install -r requirements.txt" and run the application with "python app.py". Everything else is provided or is delivered via CDN.
 
 ### Datapoint API
 Use the datapoint_api.py and datapoint_functions.py in your own project, it's been designed to have 0 dependencies outside of these 2 files (other than the requests library).
