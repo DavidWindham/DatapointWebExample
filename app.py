@@ -31,4 +31,4 @@ def get_forecast_for_location_id():
 
 
 if __name__ == '__main__':
-    datapoint_webapp.run(host="0.0.0.0", port=5000, debug=False)
+    datapoint_webapp.run(host="0.0.0.0", port=5000, debug=True)

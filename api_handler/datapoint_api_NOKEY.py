@@ -11,7 +11,9 @@ class DatapointNOKEY:
         pass
 
     def get_forecast_locations(self):
-        with open('api_handler/example_data/forecast_locations.json', 'r') as fl:
+        print("Getting forecast from file")
+        with open('example_data/forecast_locations.json', 'r') as fl:
+            print("Open")
             forecast_locations = json.load(fl)
         return forecast_locations
 
