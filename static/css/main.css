@@ -23,10 +23,6 @@ body {
     padding-right: 0;
 }
 
-.map-area {
-    background-color: aqua;
-    height: 95%
-}
 
 .bottom-map-area {
     background-color: #484848;
@@ -47,18 +43,6 @@ path {
 }
 
 
-.forecast_location {
-    fill: orangered;
-}
-
-.forecast_location_hover {
-    fill: azure;
-}
-
-.forecast_location_selected {
-    fill: blue;
-}
-
 .navbar-title {
     color: white;
     font-size: 1.4rem;
@@ -70,15 +54,7 @@ path {
     height: 100%;
 }
 
-.map_section {
-    fill: lightgreen;
-    stroke: black;
-    stroke-width: .25;
-}
 
-.map_section_hover {
-    fill: darkgreen;
-}
 
 
 .forecast-area-parent {

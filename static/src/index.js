@@ -1,4 +1,4 @@
-import './scss/style.scss';
+import './scss/main.scss';
 
 
 import $ from 'jquery';
@@ -8,10 +8,6 @@ import * as d3 from 'd3';
 import 'bootstrap';
 import 'weather-icons/weather-icons/weather-icons.less';
 import 'topojson';
-
-//import { Tooltip, Toast, Popover } from 'bootstrap';
-
-console.log(camelCase('hello world'));
 
 const DEFAULT_POINT_RADIUS = 0.5
 const SELECTED_POINT_RADIUS = 2;
@@ -78,23 +74,19 @@ function draw_boundaries(boundaries) {
     map_paths.selectAll('path')
         .data(boundaries.features).enter().append('path')
         .attr('d', path)
-        .attr("class", "map_section")
+        .attr("class", "map-single-section")
         .on("mouseout", map_boundary_out)
         .on("mouseover", map_boundary_over)
 }
 
 function map_boundary_over() {
     // On mouse hover over area
-    $(this).removeClass("map_section");
-    $(this).addClass("map_section_hover");
     const data = $(this)[0].__data__;
     $('#hover_county_div').html(data.properties.LAD13NM);
 }
 
 function map_boundary_out() {
     // On mouse out, triggers before map_boundary_over
-    $(this).addClass("map_section");
-    $(this).removeClass("map_section_hover");
     $('#hover_county_div').html("⠀");   // Set to null char to prevent height adjustment
 }
 
@@ -109,7 +101,6 @@ function get_forecast_locations() {
             forecast_points.selectAll("circle")
                 .data(site_locations)
                 .enter()
-
                 .append("circle")
                 .attr("cx", function (d) {
                     return projection([d.longitude, d.latitude])[0];
@@ -118,9 +109,7 @@ function get_forecast_locations() {
                     return projection([d.longitude, d.latitude])[1];
                 })
                 .attr("r", DEFAULT_POINT_RADIUS)
-                .attr("class", "forecast_location")
-                .on("mouseover", handle_mouse_over_point)
-                .on("mouseout", handle_mouse_out_point)
+                .attr("class", "forecast-station-point")
                 .on("click", handle_mouse_click_on_location);
         }
     });
@@ -131,8 +120,7 @@ function handle_mouse_click_on_location() {
     deselect_previous_location()
 
     // Indicates the newly selected node
-    $(this).addClass("forecast_location_selected");
-    $(this).removeClass("forecast_location_hover");
+    $(this).addClass("selected");
     $(this).attr('r', SELECTED_POINT_RADIUS);
     previously_selected_location = $(this);
 
@@ -146,7 +134,7 @@ function deselect_previous_location() {
     // This doesn't seem like a very robust solution, but it works
     if (previously_selected_location != null) {
         previously_selected_location.attr('r', DEFAULT_POINT_RADIUS)
-        previously_selected_location.removeClass("forecast_location_selected")
+        previously_selected_location.removeClass("selected")
     }
 }
 
@@ -164,21 +152,4 @@ function get_location_data_for_id(location_id) {
             $('#forecast_aside').html(result);
         }
     });
-}
-
-function handle_mouse_over_point() {
-    // On mouse hover over a forecasting point
-    // This check feels janky, but it works, maybe there's a better solution to this flipping of classes
-    if ($(this).attr("class") !== "forecast_location_selected") {
-        $(this).attr('class', null)
-        $(this).attr('class', 'forecast_location_hover')
-    }
-}
-
-function handle_mouse_out_point() {
-    // On mouse leave
-    if ($(this).attr("class") !== "forecast_location_selected") {
-        $(this).attr('class', null);
-        $(this).attr('class', 'forecast_location');
-    }
 }

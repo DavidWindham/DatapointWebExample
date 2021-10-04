@@ -1,0 +1,14 @@
+.bottom-map-area {
+  background-color: $bottom-map-area-fill;
+  height: 5%;
+  text-align: center;
+
+  .bottom-area-text {
+    font-size: $font-size-large;
+    color: $bottom-map-area-text;
+  }
+}
+
+.bottom-area-text{
+  margin-bottom: 0;
+}

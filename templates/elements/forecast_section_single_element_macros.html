@@ -1,28 +1,28 @@
 {% macro render_weather_icon(weather_icon) %}
-    <div class="col-md-3 forecast-single-element-collective">
+    <div class="col-md-3 forecast-single-point-weather-icon">
         {{ weather_icon | safe }}
     </div>
 {% endmacro %}
 
 
 {% macro render_temperature(temperature) %}
-    <div class="col-md-2 forecast-single-element-collective">
+    <div class="col-md-2 forecast-single-point-temperature">
         <p class="temperature_text">{{ temperature }}°C</p>
     </div>
 {% endmacro %}
 
 
 {% macro render_humidity_and_rain(humidity, rain_chance) %}
-    <div class="col-md-5 wrap-forecast-single-element-collective">
-        <div>
-        <p class="temperature_text">
-            <i class="wi wi-humidity">  {{ humidity }}%</i>
-        </p>
+    <div class="col-md-5 forecast-humidity-rainchance-combo">
+        <div class="forecast-single-point-humidity">
+            <p class="temperature_text">
+                <i class="wi wi-humidity">  {{ humidity }}%</i>
+            </p>
         </div>
-        <div>
-        <p class="temperature_text">
-            <i class="wi wi-raindrop">  {{ rain_chance }}%</i>
-        </p>
+        <div class="forecast-single-point-rainchance">
+            <p class="temperature_text">
+                <i class="wi wi-raindrop">  {{ rain_chance }}%</i>
+            </p>
         </div>
     </div>
 {% endmacro %}
