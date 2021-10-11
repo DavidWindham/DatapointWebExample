@@ -1,0 +1,30 @@
+@import "../molecules/forecast";
+
+
+.forecast-all-days-container {
+  fill: $forecast-all-day-container-fill;
+  margin-right: 0;
+
+  .row {
+    margin-right: 0;
+  }
+}
+
+.forecast-day-container {
+  margin: 0;
+  fill: $forecast-day-container-fill;
+}
+
+.forecast-single-container {
+  fill: $forecast-element-container-fill;
+}
+
+.forecast-data-section {
+  background-color: $forecast-all-day-container-fill;
+  color: white
+}
+
+.forecast-area-parent {
+  background-color: $forecast-all-day-container-fill;
+  padding: 0 !important;
+}

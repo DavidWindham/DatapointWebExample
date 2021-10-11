@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 
 {% block body %}
-    <div class="row combined-area-parent">
-        <div class="col-md-8 map-area-parent">
-            <div id="map_area" class="map-area"></div>
-            <div id="bottom_map_area" class="bottom-map-area">
-                <p class="bottom-area-text" id="hover_county_div">⠀</p>
+    <section class="weather-container">
+        <div class="map-area-parent">
+            <div id="map_area" class="map-area">
+
+            </div>
+            <div class="map-bottom-area">
+                <p class="bottom-area-text" id="hover_county_text_p">⠀</p>
             </div>
         </div>
-        <div id="forecast_aside" class="col-md-4 forecast-area-parent"></div>
-    </div>
+        <div id="forecast_aside" class="forecast-area">
+
+        </div>
+    </section>
 {% endblock %}

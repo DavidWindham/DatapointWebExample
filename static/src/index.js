@@ -2,10 +2,9 @@ import './scss/main.scss';
 
 
 import $ from 'jquery';
-import {camelCase} from 'lodash';
 import * as d3 from 'd3';
 
-import 'bootstrap';
+
 import 'weather-icons/weather-icons/weather-icons.less';
 import 'topojson';
 
@@ -82,12 +81,12 @@ function draw_boundaries(boundaries) {
 function map_boundary_over() {
     // On mouse hover over area
     const data = $(this)[0].__data__;
-    $('#hover_county_div').html(data.properties.LAD13NM);
+    $('#hover_county_text_p').html(data.properties.LAD13NM);
 }
 
 function map_boundary_out() {
     // On mouse out, triggers before map_boundary_over
-    $('#hover_county_div').html("⠀");   // Set to null char to prevent height adjustment
+    $('#hover_county_text_p').html("⠀");   // Set to null char to prevent height adjustment
 }
 
 function get_forecast_locations() {

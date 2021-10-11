@@ -1,0 +1,19 @@
+@import "../atoms/map/map";
+@import "../atoms/map/bottom_section";
+
+.map-area {
+  background-color: $map-area-background;
+  height: 95%
+}
+
+.map-bottom-area{
+  @include center-text;
+  background-color: $bottom-map-area-fill;
+  height: 5%;
+  text-align: center;
+
+  .bottom-area-text {
+    font-size: $font-size-large;
+    color: $bottom-map-area-text;
+  }
+}
