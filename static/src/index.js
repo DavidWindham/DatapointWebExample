@@ -25,7 +25,7 @@ $(document).ready(function () {
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
     var width = vw * (8 / 12);
-    var height = vh * 0.9;
+    var height = vh * 0.8;
 
     projection = d3.geoAlbers()
         .center([0, 55.4])
