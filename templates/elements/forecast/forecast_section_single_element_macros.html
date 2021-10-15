@@ -11,34 +11,18 @@
     </div>
 {% endmacro %}
 
-
-{% macro render_humidity_and_rain(humidity, rain_chance) %}
-    <div class="col-md-5 forecast-humidity-rainchance-combo">
-        <div class="forecast-single-point-humidity">
-            <p class="temperature_text">
-                <i class="wi wi-humidity">  {{ humidity }}%</i>
-            </p>
-        </div>
-        <div class="forecast-single-point-rainchance">
-            <p class="temperature_text">
-                <i class="wi wi-raindrop">  {{ rain_chance }}%</i>
-            </p>
-        </div>
-    </div>
-{% endmacro %}
-
-{% macro render_humidity(humidity) %}
+{% macro render_humidity(humidity_icon) %}
     <div class="humidity-container">
         <p class="humidity-text">
-            <i class="wi wi-humidity">  {{ humidity }}%</i>
+            {{ humidity_icon | safe }}
         </p>
     </div>
 {% endmacro %}
 
-{% macro render_rain(rain_chance) %}
+{% macro render_rain(rain_chance_icon) %}
     <div class="rain-container">
         <p class="rain-text">
-            <i class="wi wi-raindrop">  {{ rain_chance }}%</i>
+            {{ rain_chance_icon | safe }}
         </p>
     </div>
 {% endmacro %}

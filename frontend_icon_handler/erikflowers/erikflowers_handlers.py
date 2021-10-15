@@ -50,6 +50,14 @@ def ErikFlowers_get_wind_icon(windspeed_mph):
     return render_template('elements/ErikFlowers_icons/windspeed_icon.html', beaufort_num=beaufort_num)
 
 
+def ErikFlowers_get_humidity_icon(humidity):
+    return render_template('elements/ErikFlowers_icons/humidity_icon.html', humidity=humidity)
+
+
+def ErikFlowers_get_rain_chance_icon(rain_chance):
+    return render_template('elements/ErikFlowers_icons/rain_chance_icon.html', rain_chance=rain_chance)
+
+
 def get_beaufort(mph):
     """
     :param mph: float, miles per hour

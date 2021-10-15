@@ -11,8 +11,8 @@
         <div class="time-container">{{ passed_point.get_hour() }}</div>
         {{ render_weather_icon(passed_point.get_weather_icon()) }}
         {{ render_temperature(passed_point.temperature) }}
-        {{ render_humidity(passed_point.screen_relative_humidity) }}
-        {{ render_rain(passed_point.precipitation_probability) }}
+        {{ render_humidity(passed_point.get_humidity_icon()) }}
+        {{ render_rain(passed_point.get_rain_chance_icon()) }}
         {{ render_wind_speed(passed_point.get_windspeed_icon(), passed_point.wind_speed) }}
     </div>
 {% endmacro %}
