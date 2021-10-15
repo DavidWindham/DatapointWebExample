@@ -1,17 +1,19 @@
-.nav-pill-parent{
+.nav-pill-parent {
 
 }
 
-.nav-pill-button{
+.nav-pill-button {
   color: $forecast-nav-pill-text !important;
 
-  &.active{
+  &.active {
     color: $forecast-nav-pill-text-active !important;
-    &:hover{
+
+    &:hover {
       color: $forecast-nav-pill-text-active-hover !important;
     }
   }
-  &:hover{
+
+  &:hover {
     color: $forecast-nav-pill-text-hover !important;
   }
 }

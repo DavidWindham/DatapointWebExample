@@ -64,4 +64,3 @@ class Datapoint:
     def get_historic_locations_raw(self):
         url = self.base_url.format("wxobs", "sitelist", "")
         return url_get(url).json()
-

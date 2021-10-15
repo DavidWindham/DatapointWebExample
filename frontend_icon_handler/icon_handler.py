@@ -1,4 +1,4 @@
-# Interchangeable in theory
+# Interchangeable icon handler, simply replace the linked file and functions down-line
 from .erikflowers import erikflowers_handlers
 
 

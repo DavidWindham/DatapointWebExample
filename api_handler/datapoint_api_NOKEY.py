@@ -1,5 +1,6 @@
 from .datapoint_functions import get_closest_location
 import json
+import os
 
 
 class DatapointNOKEY:
@@ -8,15 +9,15 @@ class DatapointNOKEY:
         This class has no api key and the methods are static, I've kept this structure so it's
         interchangeable with the real API handler
         """
-        pass
+        self.dir_path = os.path.dirname(os.path.realpath(__file__))
 
     def get_forecast_locations(self):
-        with open('api_handler/example_data/forecast_locations.json', 'r') as fl:
+        with open(self.dir_path + '/example_data/forecast_locations.json', 'r') as fl:
             forecast_locations = json.load(fl)
         return forecast_locations
 
     def get_forecast_for_location_id(self, location_id):
-        with open('api_handler/example_data/' + str(location_id) + '.json', 'r') as fi:
+        with open(self.dir_path + '/example_data/' + str(location_id) + '.json', 'r') as fi:
             forecast_data = json.load(fi)
         return forecast_data
 

@@ -17,27 +17,3 @@
   row-gap: 0;
   grid-template-columns: 9em;
 }
-
-
-.forecast-all-days-container {
-  fill: $forecast-all-day-container-fill;
-  margin-right: 0;
-
-  .row {
-    margin-right: 0;
-  }
-}
-
-.forecast-day-container {
-  margin: 0;
-  fill: $forecast-day-container-fill;
-}
-
-.forecast-single-container {
-  fill: $forecast-element-container-fill;
-}
-
-.forecast-area-parent {
-  background-color: $forecast-all-day-container-fill;
-  padding: 0 !important;
-}

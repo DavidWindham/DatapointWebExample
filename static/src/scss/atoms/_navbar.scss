@@ -4,7 +4,6 @@
   margin: 0;
 }
 
-
 .nav-link {
   color: $navbar-link-base-text-color;
   font-size: $font-size-medium;
@@ -18,6 +17,7 @@
 
   text-decoration: none;
   transition: color 0.2s;
+
   &:hover {
     color: $navbar-link-base-text-color-hover;
   }
