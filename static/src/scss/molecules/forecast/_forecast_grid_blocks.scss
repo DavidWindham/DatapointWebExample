@@ -1,0 +1,65 @@
+.time-container,
+.weather-icon-container,
+.temperature-container {
+  @include center-text();
+  grid-row: 1 / span 2;
+}
+
+.time-container {
+  grid-column: 1;
+  font-size: 2em;
+  color: $time-color;
+  background-color: $time-background;
+}
+
+.weather-icon-container {
+  grid-column: 2;
+  font-size: 3em;
+}
+
+.temperature-container {
+  grid-column: 3;
+  font-size: 2em;
+
+  &.temperature-text {
+
+  }
+}
+
+.humidity-container {
+  @include center-text();
+  grid-column: 4;
+  grid-row: 1;
+  font-size: 2em;
+
+  .humidity-text {
+    font-size: 1em;
+    margin: 0;
+  }
+}
+
+.rain-container {
+  @include center-text();
+  grid-column: 4;
+  grid-row: 2;
+  font-size: 2em;
+
+  .rain-text {
+    font-size: 1em;
+    margin: 0;
+  }
+}
+
+.wind-container {
+  @include center-text();
+  grid-column: 5;
+  grid-row: 1;
+  font-size: 3em;
+}
+
+.wind-text-container {
+  @include center-text();
+  grid-column: 5;
+  grid-row: 2;
+  font-size: 1.5em;
+}

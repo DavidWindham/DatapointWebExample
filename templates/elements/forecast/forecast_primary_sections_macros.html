@@ -1,8 +1,8 @@
-{% from "elements/forecast_section_single_day_macros.html" import render_day_data %}
+{% from "elements/forecast/forecast_section_single_day_macros.html" import render_day_data %}
 
 
 {% macro render_days_pills(passed_days) %}
-    <nav class="nav nav-tabs nav-fill" id="forecast_table_tabs" role="tablist">
+    <nav class="nav nav-tabs nav-fill nav-pill-parent" id="forecast_table_tabs" role="tablist">
         {% for single_day in passed_days %}
             {% if loop.index == 1 %}
                 {{ render_single_day_pill(single_day, True) }}
@@ -15,7 +15,7 @@
 
 
 {% macro render_single_day_pill(single_day, is_first) %}
-    <button class="nav-link{% if is_first %} active{% endif %}" data-bs-toggle="tab"
+    <button class="nav-link{% if is_first %} active{% endif %} nav-pill-button" data-bs-toggle="tab"
             data-bs-target="#single-day-{{ single_day.value }}" type="button" role="tab" aria-controls="nav-home"
             aria-selected="{% if is_first %}true{% else %}false{% endif %}">{{ single_day.get_day_name() }}
     </button>

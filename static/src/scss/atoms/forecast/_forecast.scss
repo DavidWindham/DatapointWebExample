@@ -1,0 +1,13 @@
+.forecast-location-name{
+  @include center-text;
+  background-color: $forecast-date-background-fill;
+  color: white;
+}
+
+.forecast-single-point-time {
+  @include center-text;
+  fill: $forecast-date-background-fill;
+  color: $forecast-date-text;
+
+  font-size: $font-size-large;
+}

@@ -1,0 +1,21 @@
+.map-single-section {
+  fill: $map-path-fill;
+  stroke: $map-path-stroke;
+  stroke-width: .25;
+
+  &:hover {
+    fill: $map-path-fill-hover;
+  }
+}
+
+.forecast-station-point {
+  fill: $forecast-station-fill;
+
+  &:hover {
+    fill: $forecast-station-hover;
+  }
+
+  &.selected {
+    fill: $forecast-station-selected;
+  }
+}

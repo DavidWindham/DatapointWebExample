@@ -1,0 +1,11 @@
+.bottom-area-text {
+  font-size: $font-size-large;
+  margin-top: 0;
+}
+
+.bottom-area-text {
+  @include center-text();
+  font-size: $font-size-large;
+  color: $bottom-map-area-text;
+  height: 100%;
+}

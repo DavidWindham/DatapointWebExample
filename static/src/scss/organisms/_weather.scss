@@ -1,0 +1,9 @@
+@import "../organisms/forecast";
+@import "../organisms/map";
+
+.weather-container{
+  display: flex;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}

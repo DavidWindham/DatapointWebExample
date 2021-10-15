@@ -38,7 +38,8 @@ class ForecastSinglePoint(IconHandler):
         self.precipitation_probability = pd['Pp']
 
     def get_hour(self):
-        return '{00:.2f}'.format(self.hours)
+        # return '{00:.2f}'.format(self.hours)
+        return str('{:02d}'.format(int(self.hours))) + ":00"
 
     def get_weather_type_num(self):
         weather_type_dict = {

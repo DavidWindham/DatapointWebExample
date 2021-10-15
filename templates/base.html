@@ -1,13 +1,11 @@
+{% from "navbar/navbar.html" import render_navbar %}
+
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/topojson@3"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='dist/main.js') }}"></script>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/weather-icons.min.css') }}">
     {% block external_script_block %}{% endblock %}
 
     <head>
@@ -17,38 +15,10 @@
         <title>{% block title %}Title{% endblock %}</title>
     </head>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <div class="container-fluid">
-            <p class="navbar-title">Datapoint Forecast Visualizer</p>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link">by David Windham</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/DavidWindham">Github</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.metoffice.gov.uk/services/data/datapoint">Datapoint API</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/erikflowers/weather-icons">ErikFlowers Weather Icons</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://martinjc.github.io/UK-GeoJSON">Martinjc UK-TopoJSON</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {{ render_navbar() }}
+
     <body>
-        <div class="container-fluid main-container">
-            {% block body %}{% endblock %}
-        </div>
+        {% block body %}{% endblock %}
     </body>
 </html>
 
