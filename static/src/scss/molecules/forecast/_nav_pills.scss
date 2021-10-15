@@ -1,0 +1,17 @@
+.nav-pill-parent{
+
+}
+
+.nav-pill-button{
+  color: $forecast-nav-pill-text !important;
+
+  &.active{
+    color: $forecast-nav-pill-text-active !important;
+    &:hover{
+      color: $forecast-nav-pill-text-active-hover !important;
+    }
+  }
+  &:hover{
+    color: $forecast-nav-pill-text-hover !important;
+  }
+}

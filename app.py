@@ -27,7 +27,7 @@ def get_historic_locations():
 @datapoint_webapp.route('/get_forecast_for_location_id', methods=['POST'])
 def get_forecast_for_location_id():
     location_data = ForecastData(datapoint_handler.get_forecast_for_location_id(request.json['location_id']))
-    return render_template('elements/forecast_section_template.html', location_data=location_data)
+    return render_template('elements/forecast/forecast_section_template.html', location_data=location_data)
 
 
 if __name__ == '__main__':

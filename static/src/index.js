@@ -1,9 +1,9 @@
 import './scss/main.scss';
 
-
 import $ from 'jquery';
-import * as d3 from 'd3';
+import 'bootstrap/js/src/tab';
 
+import * as d3 from 'd3';
 
 import 'weather-icons/weather-icons/weather-icons.less';
 import 'topojson';
@@ -18,6 +18,7 @@ var map_paths;
 var forecast_points;
 
 var previously_selected_location;
+
 
 $(document).ready(function () {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)

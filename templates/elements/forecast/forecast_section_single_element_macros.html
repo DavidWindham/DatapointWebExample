@@ -1,13 +1,13 @@
 {% macro render_weather_icon(weather_icon) %}
-    <div class="col-md-3 forecast-single-point-weather-icon">
+    <div class="weather-icon-container">
         {{ weather_icon | safe }}
     </div>
 {% endmacro %}
 
 
 {% macro render_temperature(temperature) %}
-    <div class="col-md-2 forecast-single-point-temperature">
-        <p class="temperature_text">{{ temperature }}°C</p>
+    <div class="temperature-container">
+        <p class="temperature-text">{{ temperature }}°C</p>
     </div>
 {% endmacro %}
 
@@ -27,15 +27,29 @@
     </div>
 {% endmacro %}
 
+{% macro render_humidity(humidity) %}
+    <div class="humidity-container">
+        <p class="humidity-text">
+            <i class="wi wi-humidity">  {{ humidity }}%</i>
+        </p>
+    </div>
+{% endmacro %}
+
+{% macro render_rain(rain_chance) %}
+    <div class="rain-container">
+        <p class="rain-text">
+            <i class="wi wi-raindrop">  {{ rain_chance }}%</i>
+        </p>
+    </div>
+{% endmacro %}
+
 
 {% macro render_wind_speed(speed_icon, speed) %}
-    <div class="col-md-2 wrap-forecast-single-element-collective">
-        <div>
-            {{ speed_icon | safe }}
-        </div>
-        <div class="wind-speed-text">
-            {{ speed }}mph
-        </div>
+    <div class="wind-container">
+        {{ speed_icon | safe }}
+    </div>
+    <div class="wind-text-container">
+        {{ speed }}mph
     </div>
 {% endmacro %}
 

@@ -3,15 +3,9 @@
   margin-top: 0;
 }
 
-
-
-.bottom-map-area {
-  background-color: $bottom-map-area-fill;
-  height: 5%;
-  text-align: center;
-
-  .bottom-area-text {
-    font-size: $font-size-large;
-    color: $bottom-map-area-text;
-  }
+.bottom-area-text {
+  @include center-text();
+  font-size: $font-size-large;
+  color: $bottom-map-area-text;
+  height: 100%;
 }

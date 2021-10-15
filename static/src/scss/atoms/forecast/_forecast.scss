@@ -1,5 +1,6 @@
 .forecast-location-name{
   @include center-text;
+  background-color: $forecast-date-background-fill;
   color: white;
 }
 

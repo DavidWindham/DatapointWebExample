@@ -1,4 +1,22 @@
 @import "../molecules/forecast";
+@import "../molecules/forecast/forecast_grid_blocks";
+
+.forecast-aside {
+  width: 100%;
+  background-color: $forecast-aside-background-color;
+}
+
+.forecast-days-section { // The section where the pilled table is stored
+  background-color: $forecast-all-day-container-fill;
+}
+
+.datapoint-container {
+  display: grid;
+  color: white;
+  border-bottom: solid;
+  row-gap: 0;
+  grid-template-columns: 9em;
+}
 
 
 .forecast-all-days-container {
@@ -17,11 +35,6 @@
 
 .forecast-single-container {
   fill: $forecast-element-container-fill;
-}
-
-.forecast-data-section {
-  background-color: $forecast-all-day-container-fill;
-  color: white
 }
 
 .forecast-area-parent {

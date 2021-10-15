@@ -3,17 +3,12 @@
 
 .map-area {
   background-color: $map-area-background;
-  height: 95%
+  height: 90%
 }
 
-.map-bottom-area{
+.map-bottom-area {
   @include center-text;
   background-color: $bottom-map-area-fill;
-  height: 5%;
-  text-align: center;
-
-  .bottom-area-text {
-    font-size: $font-size-large;
-    color: $bottom-map-area-text;
-  }
+  height: 10%;
+  min-height: 10%;
 }

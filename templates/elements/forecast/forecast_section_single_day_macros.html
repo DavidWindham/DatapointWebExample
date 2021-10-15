@@ -1,0 +1,18 @@
+{% from "elements/forecast/forecast_section_single_element_macros.html" import render_weather_icon, render_temperature, render_wind_speed, render_humidity, render_rain %}
+
+{% macro render_day_data(passed_day) %}
+    {% for single_time_point in passed_day.points %}
+        {{ render_datapoint(single_time_point) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro render_datapoint(passed_point) %}
+    <div class="datapoint-container">
+        <div class="time-container">{{ passed_point.get_hour() }}</div>
+        {{ render_weather_icon(passed_point.get_weather_icon()) }}
+        {{ render_temperature(passed_point.temperature) }}
+        {{ render_humidity(passed_point.screen_relative_humidity) }}
+        {{ render_rain(passed_point.precipitation_probability) }}
+        {{ render_wind_speed(passed_point.get_windspeed_icon(), passed_point.wind_speed) }}
+    </div>
+{% endmacro %}
