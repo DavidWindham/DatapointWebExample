@@ -3,7 +3,10 @@
 
 .map-area {
   background-color: $map-area-background;
-  //height: 90%
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
 }
 
 .map-bottom-area {
