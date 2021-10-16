@@ -9,6 +9,7 @@
   &.active {
     color: $forecast-nav-pill-text-active !important;
     background-color: $forecast-nav-pill-background-active !important;
+
     &:hover {
       color: $forecast-nav-pill-text-active-hover !important;
       border: none;
