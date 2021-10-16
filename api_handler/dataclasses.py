@@ -4,42 +4,42 @@ from frontend_icon_handler.icon_handler_class import IconHandler
 
 class ForecastData:
     def __init__(self, passed_data):
-        location_data = passed_data['SiteRep']['DV']['Location']
-        self.latitude: float = float(location_data['lat'])
-        self.longitude: float = float(location_data['lon'])
-        self.name: str = location_data['name']
-        self.elevation: float = float(location_data['elevation'])
-        self.days: list = [ForecastDay(x) for x in location_data['Period']]
+        location_data = passed_data["SiteRep"]["DV"]["Location"]
+        self.latitude: float = float(location_data["lat"])
+        self.longitude: float = float(location_data["lon"])
+        self.name: str = location_data["name"]
+        self.elevation: float = float(location_data["elevation"])
+        self.days: list = [ForecastDay(x) for x in location_data["Period"]]
 
 
 class ForecastDay:
     def __init__(self, day_data):
-        self.type = day_data['type']
-        self.value = day_data['value']
-        self.points = [ForecastSinglePoint(x) for x in day_data['Rep']]
+        self.type = day_data["type"]
+        self.value = day_data["value"]
+        self.points = [ForecastSinglePoint(x) for x in day_data["Rep"]]
 
     def get_day_name(self):
-        return datetime.datetime.strptime(self.value, '%Y-%m-%dZ').strftime('%A')
+        return datetime.datetime.strptime(self.value, "%Y-%m-%dZ").strftime("%A")
 
 
 class ForecastSinglePoint(IconHandler):
     def __init__(self, pd):
-        self.minutes: int = int(pd['$'])
+        self.minutes: int = int(pd["$"])
         self.hours = self.minutes / 60
-        self.feels_like_temperature = pd['F']
-        self.wind_gust = pd['G']
-        self.screen_relative_humidity = pd['H']
-        self.temperature = pd['T']
-        self.visibility = pd['V']
-        self.wind_direction = pd['D']
-        self.wind_speed = pd['S']
-        self.max_uv_index = pd['U']
-        self.weather_type_val = pd['W']
-        self.precipitation_probability = pd['Pp']
+        self.feels_like_temperature = pd["F"]
+        self.wind_gust = pd["G"]
+        self.screen_relative_humidity = pd["H"]
+        self.temperature = pd["T"]
+        self.visibility = pd["V"]
+        self.wind_direction = pd["D"]
+        self.wind_speed = pd["S"]
+        self.max_uv_index = pd["U"]
+        self.weather_type_val = pd["W"]
+        self.precipitation_probability = pd["Pp"]
 
     def get_hour(self):
         # return '{00:.2f}'.format(self.hours)
-        return str('{:02d}'.format(int(self.hours))) + ":00"
+        return str("{:02d}".format(int(self.hours))) + ":00"
 
     def get_weather_type_num(self):
         weather_type_dict = {
@@ -74,6 +74,6 @@ class ForecastSinglePoint(IconHandler):
             "27": "Heavy snow",
             "28": "Thunder shower (night)",
             "29": "Thunder shower (day)",
-            "30": "Thunder"
+            "30": "Thunder",
         }
         return weather_type_dict[self.weather_type_val]

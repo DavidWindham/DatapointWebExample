@@ -9,7 +9,11 @@ class IconHandler:
         return icon_handler.get_rendered_windspeed_icon_element(self.wind_speed)
 
     def get_humidity_icon(self):
-        return icon_handler.get_rendered_humidity_icon_element(self.screen_relative_humidity)
+        return icon_handler.get_rendered_humidity_icon_element(
+            self.screen_relative_humidity
+        )
 
     def get_rain_chance_icon(self):
-        return icon_handler.get_rendered_rain_chance_element(self.precipitation_probability)
+        return icon_handler.get_rendered_rain_chance_element(
+            self.precipitation_probability
+        )

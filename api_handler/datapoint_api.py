@@ -4,14 +4,17 @@ from .datapoint_functions import url_get, get_closest_location
 class Datapoint:
     def __init__(self, api_key: str):
         self.api_key = api_key
-        self.base_url = "http://datapoint.metoffice.gov.uk/public/data/val/{}/all/json/{}?{}&key=" + self.api_key
+        self.base_url = (
+            "http://datapoint.metoffice.gov.uk/public/data/val/{}/all/json/{}?{}&key="
+            + self.api_key
+        )
 
     """
     Functions to get forecast data - wxfcs
     """
 
     def get_forecast_locations(self):
-        locations_json = self.get_forecast_locations_raw()['Locations']['Location']
+        locations_json = self.get_forecast_locations_raw()["Locations"]["Location"]
         return locations_json
 
     def get_forecast_for_location_id(self, location_id):
@@ -20,7 +23,9 @@ class Datapoint:
         return location_data
 
     def get_forecast_for_coordinates(self, lat: float, long: float):
-        location_id = self.get_forecast_location_for_coordinates(lat=lat, long=long)['id']
+        location_id = self.get_forecast_location_for_coordinates(lat=lat, long=long)[
+            "id"
+        ]
         forecast_data = self.get_forecast_for_location_id(location_id=location_id)
         return forecast_data
 
@@ -36,7 +41,7 @@ class Datapoint:
     """
 
     def get_historic_locations(self):
-        locations = self.get_historic_locations_raw()['Locations']['Location']
+        locations = self.get_historic_locations_raw()["Locations"]["Location"]
         return locations
 
     def get_historic_for_location_id(self, location_id):
@@ -46,7 +51,7 @@ class Datapoint:
 
     def get_historic_for_coordinates(self, lat, long):
         locations = self.get_historic_locations()
-        location_id = get_closest_location(locations, lat, long)['id']
+        location_id = get_closest_location(locations, lat, long)["id"]
         return self.get_historic_for_location_id(location_id)
 
     def get_historic_location_for_coordinates(self, lat, long):
