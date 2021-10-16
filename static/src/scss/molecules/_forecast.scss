@@ -1,2 +1,10 @@
 @import "../atoms/forecast/forecast";
 @import "../molecules/forecast/nav_pills";
+
+.datapoint-container {
+  display: grid;
+  color: white;
+  border-bottom: solid #C8D5B9;
+  row-gap: 0;
+  grid-template-columns: 9em;
+}

@@ -18,7 +18,9 @@
     {{ render_navbar() }}
 
     <body>
-        {% block body %}{% endblock %}
+        <div class="parent-div">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>
 

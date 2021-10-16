@@ -1,5 +1,13 @@
-@mixin center-text{
+@mixin center-text {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin hover-color-transition {
+  transition: 0.2s;
+
+  &:hover {
+    transition: color 0.2s;
+  }
 }

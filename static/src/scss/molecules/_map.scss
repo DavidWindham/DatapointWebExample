@@ -7,11 +7,12 @@
   flex-flow: column;
   flex: 1 1 auto;
   overflow-y: auto;
+  height: 95%;
 }
 
 .map-bottom-area {
   @include center-text;
   background-color: $bottom-map-area-fill;
-  height: 10%;
-  min-height: 10%;
+  height: 5%;
+  min-height: 5%;
 }

@@ -9,6 +9,8 @@
 }
 
 .forecast-station-point {
+  @include hover-color-transition();
+
   fill: $forecast-station-fill;
 
   &:hover {

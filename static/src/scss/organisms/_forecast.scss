@@ -2,18 +2,17 @@
 @import "../molecules/forecast/forecast_grid_blocks";
 
 .forecast-aside {
-  width: 100%;
+  min-width: 500px;
+  width: 30%;
   background-color: $forecast-aside-background-color;
+  border-left: $forecast-aside-border;
 }
 
 .forecast-days-section { // The section where the pilled table is stored
   background-color: $forecast-all-day-container-fill;
 }
 
-.datapoint-container {
-  display: grid;
-  color: white;
-  border-bottom: solid;
-  row-gap: 0;
-  grid-template-columns: 9em;
+.tab-pane{
+  overflow:auto;
+  height: 100%;
 }

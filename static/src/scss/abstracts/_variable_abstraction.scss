@@ -1,17 +1,26 @@
-$navbar-background: #000000;
+$navbar-background: #050B0F;
+$navbar-border: solid #F06449;
 
-$map-area-background: #E3E4E0;
-$map-path-fill: #C6CCD0;
-$map-path-stroke: #0D1B2A;
-$map-path-fill-hover: #5C7490;
+$navbar-link-base-text-color: #68B0AB;
+$navbar-link-base-text-color-hover: #F06449;
 
-$bottom-map-area-fill: #D3D7D7;
-$bottom-map-area-text: #0D1B2A;
+$map-area-background: #90b8cf;
+$map-path-fill: #C8D5B9;
+$map-path-stroke: #424C55;
+$map-path-fill-hover: #68B0AB;
 
-$forecast-station-fill: red;
-$forecast-station-hover: blue;
-$forecast-station-selected: white;
+$bottom-map-area-fill: #424C55;
+$bottom-map-area-text: #C8D5B9;
 
+$forecast-station-fill: #F06449;
+$forecast-station-hover: #524632;
+$forecast-station-selected: #820B8A;
+
+$forecast-aside-background-color: #1B263B;
+$forecast-aside-border: solid #050B0F;
+
+$forecast-location-name-background: #1B263B;
+$forecast-location-name-color: #F06449;
 
 $forecast-all-day-container-fill: #1B263B;
 $forecast-day-container-fill: red;
@@ -19,17 +28,12 @@ $forecast-element-container-fill: #f4f3ee;
 $forecast-date-background-fill: #660708;
 $forecast-date-text: #f5f3f4;
 
+$forecast-nav-pill-background: #1B263B;
+$forecast-nav-pill-text: #8FC0A9;
+$forecast-nav-pill-text-hover: #F06449;
+$forecast-nav-pill-background-active: #424C55;
+$forecast-nav-pill-text-active: #F06449;
+$forecast-nav-pill-text-active-hover: #F06449;
 
-$navbar-link-base-text-color: grey;
-$navbar-link-base-text-color-hover: white;
-
-
-$forecast-aside-background-color: blue;
-
-$forecast-nav-pill-text: red;
-$forecast-nav-pill-text-hover: blue;
-$forecast-nav-pill-text-active: green;
-$forecast-nav-pill-text-active-hover: orange;
-
-$time-color: black;
-$time-background: white;
+$time-color: #EBF0E6;
+$time-background: #424C55;

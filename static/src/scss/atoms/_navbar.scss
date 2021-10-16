@@ -5,7 +5,8 @@
 }
 
 .nav-link {
-  color: $navbar-link-base-text-color;
+  @include hover-color-transition();
+  color: $navbar-link-base-text-color !important;
   font-size: $font-size-medium;
 
   display: flex;
@@ -16,9 +17,8 @@
   padding-right: 1rem;
 
   text-decoration: none;
-  transition: color 0.2s;
 
   &:hover {
-    color: $navbar-link-base-text-color-hover;
+    color: $navbar-link-base-text-color-hover !important;
   }
 }

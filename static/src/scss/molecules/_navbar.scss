@@ -1,12 +1,14 @@
 @import "../atoms/navbar";
 
 .nav-title-parent {
+  @include center-text();
   display: flex;
   align-content: center;
   padding: 1rem;
 }
 
 .nav-credit-links {
+  @include center-text();
   display: flex;
   align-content: center;
 }
