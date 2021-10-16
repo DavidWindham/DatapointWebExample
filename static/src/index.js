@@ -24,8 +24,8 @@ $(document).ready(function () {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-    var width = $("#map_area").width();
-    var height = $("#map_area").height();
+    let width = $("#map_area").width();
+    let height = $("#map_area").height();
 
     projection = d3.geoAlbers()
         .center([0, 55.4])
@@ -47,7 +47,7 @@ $(document).ready(function () {
     load_boundaries("static/topojson/gb-local_auth.json");
     load_boundaries("static/topojson/ni-local_auth.json");
 
-    var zoom = d3.zoom()
+    let zoom = d3.zoom()
         .scaleExtent([1, 16])
         .on('zoom', function (event) {
             map_paths.selectAll('path')
