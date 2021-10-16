@@ -11,5 +11,14 @@
   background-color: $navbar-background;
   align-content: center;
   height: 5%;
+
+  @media only screen and (max-width: $medium-screen-width) {
+    height: 7%;
+  }
+
+  @media only screen and (max-width: $small-screen-width) {
+    height: 10%;
+  }
+
   border-bottom: $navbar-border;
 }

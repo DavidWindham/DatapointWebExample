@@ -24,11 +24,6 @@ $(document).ready(function () {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-    //var width = vw * (8 / 12);
-    //var height = vh * 0.8;
-    //var width = 400;
-    //var height = 400;
-
     var width = $("#map_area").width();
     var height = $("#map_area").height();
 
@@ -66,24 +61,20 @@ $(document).ready(function () {
     get_forecast_locations();
 });
 
-$(window).resize(function() {
-    if(this.resizeTO) clearTimeout(this.resizeTO);
-    this.resizeTO = setTimeout(function() {
+$(window).resize(function () {
+    if (this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function () {
         $(this).trigger('resizeEnd');
     }, 500);
 });
 
-$(window).bind('resizeEnd', function() {
-    //var height = $("#mapContainer").height();
-    //$("#mapContainer svg").css("height", height);
+$(window).bind('resizeEnd', function () {
     var width = $("#map_area").width();
     var height = $("#map_area").height();
-    //draw(height);
     resize_svg(width, height)
 });
 
-function resize_svg(width, height){
-    console.log("pop");
+function resize_svg(width, height) {
     svg.attr("width", width).attr("height", height);
 }
 

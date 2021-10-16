@@ -1,8 +1,19 @@
 @import "../molecules/map";
 
-.map-area-parent{
-  //height: 100%;
+.map-area-parent {
   width: 70%;
   max-width: 70%;
   min-width: 20%;
+
+  @media only screen and (max-width: $medium-screen-width) {
+    min-height: 60%;
+    height: 60%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  @media only screen and (max-width: $small-screen-width) {
+    min-height: 40%;
+    height: 40%;
+  }
 }
