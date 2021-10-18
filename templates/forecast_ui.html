@@ -7,13 +7,19 @@
 
             </div>
             <div class="map-bottom-area">
-                <input class="postcode_input">
-                <button class="postcode-submit-button" onclick="get_forecast_for_postcode()">Submit</button>
                 <p class="bottom-area-text" id="hover_county_text_p">⠀</p>
             </div>
         </div>
         <div id="forecast_aside" class="forecast-aside">
-
+            <div class="forecast-info-postcode-parent">
+                <p>Enter Postcode below, or click a forecast location on the map to the left</p>
+                <div class="forecast-postcode-parent">
+                    <form onsubmit="get_forecast_for_postcode(); return false">
+                        <input class="postcode_input" placeholder="Enter Postcode"><button class="postcode-submit-button" onclick="get_forecast_for_postcode()">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div id="forecast_data" class="forecast-data-parent"></div>
         </div>
     </div>
 {% endblock %}

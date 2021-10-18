@@ -1,5 +1,6 @@
 @import "../atoms/forecast/forecast";
-@import "../molecules/forecast/nav_pills";
+@import "forecast/nav_pills";
+@import "forecast/postcode";
 
 .datapoint-container {
   display: grid;

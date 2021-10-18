@@ -1,0 +1,21 @@
+@import "../../atoms/forecast/postcode";
+
+.forecast-info-postcode-parent {
+  background-color: $forecast-info-postcode-background;
+  color: $forecast-info-postcode-color;
+
+  p {
+    @include center-text();
+    margin-top: 0;
+    padding-top: 0.5em;
+    font-size: 1em;
+  }
+}
+
+.forecast-postcode-parent {
+  @include center-text();
+  display: flex;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}

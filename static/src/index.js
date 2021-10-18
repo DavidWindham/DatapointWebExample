@@ -11,13 +11,13 @@ import 'topojson';
 const DEFAULT_POINT_RADIUS = 0.5
 const SELECTED_POINT_RADIUS = 2;
 
-var svg;
-var projection;
-var path;
-var map_paths;
-var forecast_points;
+let svg;
+let projection;
+let path;
+let map_paths;
+let forecast_points;
 
-var previously_selected_location;
+let previously_selected_location;
 
 
 $(document).ready(function () {
@@ -69,8 +69,8 @@ $(window).resize(function () {
 });
 
 $(window).bind('resizeEnd', function () {
-    var width = $("#map_area").width();
-    var height = $("#map_area").height();
+    let width = $("#map_area").width();
+    let height = $("#map_area").height();
     resize_svg(width, height)
 });
 
@@ -166,7 +166,7 @@ function get_location_data_for_id(location_id) {
             'location_id': location_id
         }),
         success: function (result) {
-            $('#forecast_aside').html(result);
+            $('#forecast_data').html(result);
         }
     });
 }
@@ -181,9 +181,11 @@ function get_forecast_for_postcode() {
             'postcode': $('.postcode_input').val()
         }),
         success: function (result) {
-            $('#forecast_aside').html(result);
+            $('#forecast_data').html(result);
         }
     });
 }
 
 window.get_forecast_for_postcode = get_forecast_for_postcode;
+
+let test_let = "test_var_is_here";

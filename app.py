@@ -39,18 +39,17 @@ def get_forecast_for_location_id():
 @datapoint_webapp.route("/get_forecast_location_for_postcode", methods=["POST"])
 def get_forecast_location_for_postcode():
     passed_postcode = request.json["postcode"]
+    print(passed_postcode)
     postcode_lat, postcode_long = postcode_resolver.get_lat_long_for_postcode(
         passed_postcode
     )
-    print(postcode_lat, postcode_long)
     location_data = ForecastData(
         datapoint_handler.get_forecast_for_coordinates(postcode_lat, postcode_long)
     )
-    print(location_data)
     return render_template(
         "elements/forecast/forecast_section_template.html", location_data=location_data
     )
 
 
 if __name__ == "__main__":
-    datapoint_webapp.run(host="0.0.0.0", port=5000, debug=True)
+    datapoint_webapp.run(host="0.0.0.0", port=5000)

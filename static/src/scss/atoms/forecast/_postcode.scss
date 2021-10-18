@@ -1,0 +1,41 @@
+.postcode_input,
+.postcode-submit-button {
+  font-size: 1.5em;
+  border: none;
+  text-align: center;
+
+
+
+
+
+
+  padding: 0.3rem;
+}
+
+.postcode_input {
+  color: $postcode-input-text-color;
+  background-color: $postcode-input-background;
+
+  border-bottom: 0.3rem solid transparent;
+  border-radius: $postcode-border-radius 0 0 $postcode-border-radius;
+}
+
+.postcode-submit-button {
+  background-color: $postcode-submit-background;
+  color: $postcode-submit-color;
+
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+
+  &:hover{
+
+  cursor: pointer;
+  }
+
+
+
+
+
+  border-bottom: 0.3rem solid transparent;
+  border-radius: 0 $postcode-border-radius $postcode-border-radius 0;
+}
