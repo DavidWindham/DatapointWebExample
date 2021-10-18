@@ -25,8 +25,8 @@ def main():
     long = 0.1419
 
     # This function will return a single forecast location closest to that latitude and longitude
-    closest_location_to_lat_long = datapoint_handler.get_forecast_location_for_coordinates(
-        lat, long
+    closest_location_to_lat_long = (
+        datapoint_handler.get_forecast_location_for_coordinates(lat, long)
     )
 
     # And here you can get the ID for that point

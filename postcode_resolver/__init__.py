@@ -1,0 +1,1 @@
+from postcode_resolver.postcode_class import PostcodeResolver

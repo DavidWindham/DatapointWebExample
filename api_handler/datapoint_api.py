@@ -19,8 +19,8 @@ class Datapoint:
 
     def get_forecast_for_location_id(self, location_id):
         url = self.base_url.format("wxfcs", location_id, "res=3hourly")
-        location_data = url_get(url).json()
-        return location_data
+        forecast_data = url_get(url).json()
+        return forecast_data
 
     def get_forecast_for_coordinates(self, lat: float, long: float):
         location_id = self.get_forecast_location_for_coordinates(lat=lat, long=long)[

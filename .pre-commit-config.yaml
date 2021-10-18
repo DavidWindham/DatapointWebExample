@@ -5,7 +5,9 @@ repos:
     -   id: check-yaml
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
+    -   id: detect-private-key
+    -   id: requirements-txt-fixer
 -   repo: https://github.com/psf/black
-    rev: 19.3b0
+    rev: 2f3fa1f
     hooks:
     -   id: black

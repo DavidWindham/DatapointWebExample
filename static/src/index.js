@@ -170,3 +170,20 @@ function get_location_data_for_id(location_id) {
         }
     });
 }
+
+function get_forecast_for_postcode() {
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/get_forecast_location_for_postcode",
+        contentType: "application/json",
+        data: JSON.stringify({
+            'postcode': $('.postcode_input').val()
+        }),
+        success: function (result) {
+            $('#forecast_aside').html(result);
+        }
+    });
+}
+
+window.get_forecast_for_postcode = get_forecast_for_postcode;
