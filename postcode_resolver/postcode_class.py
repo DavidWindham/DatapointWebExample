@@ -1,5 +1,5 @@
 from .postcode_functions import clean_postcode
-from pydantic import BaseModel
+from typing import NamedTuple
 import csv
 import os
 
@@ -16,7 +16,7 @@ class PostcodeResolver:
             for row in reader:
                 shortened_postcode = row[0].replace(" ", "")
                 self.data_dict[shortened_postcode] = Postcode(
-                    postcode=shortened_postcode, lat=row[1], long=row[2]
+                    lat=float(row[1]), long=float(row[2])
                 )
 
     def get_lat_long_for_postcode(self, postcode: str):
@@ -25,7 +25,6 @@ class PostcodeResolver:
         return postcode_obj.lat, postcode_obj.long
 
 
-class Postcode(BaseModel):
-    postcode: str
+class Postcode(NamedTuple):
     lat: float
     long: float

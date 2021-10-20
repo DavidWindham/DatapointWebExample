@@ -51,4 +51,4 @@ def get_forecast_location_for_postcode():
 
 
 # if __name__ == "__main__":
-#     datapoint_webapp.run(host="0.0.0.0", port=5000, debug=True)
+#    datapoint_webapp.run(host="0.0.0.0", port=5000, debug=False)
