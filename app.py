@@ -42,13 +42,10 @@ def get_forecast_location_for_postcode():
     postcode_lat, postcode_long = postcode_resolver.get_lat_long_for_postcode(
         passed_postcode
     )
-    location_data = ForecastData(
-        datapoint_handler.get_forecast_for_coordinates(postcode_lat, postcode_long)
-    )
-    return render_template(
-        "elements/forecast/forecast_section_template.html", location_data=location_data
-    )
+    return datapoint_handler.get_forecast_location_for_coordinates(
+        postcode_lat, postcode_long
+    )["id"]
 
 
-# if __name__ == "__main__":
-#    datapoint_webapp.run(host="0.0.0.0", port=5000, debug=False)
+if __name__ == "__main__":
+    datapoint_webapp.run(host="0.0.0.0", port=5000, debug=True)

@@ -19,7 +19,6 @@ let forecast_points;
 
 let previously_selected_location;
 
-
 $(document).ready(function () {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
@@ -125,6 +124,9 @@ function get_forecast_locations() {
                 .attr("cy", function (d) {
                     return projection([d.longitude, d.latitude])[1];
                 })
+                .attr("id", function (d) {
+                    return d.id;
+                })
                 .attr("r", DEFAULT_POINT_RADIUS)
                 .attr("class", "forecast-station-point")
                 .on("click", handle_mouse_click_on_location);
@@ -133,16 +135,22 @@ function get_forecast_locations() {
 }
 
 function handle_mouse_click_on_location() {
+    handle_forecast_location_select($(this)[0].__data__.id);
+}
+
+function handle_forecast_location_select(passed_forecast_point_id) {
     // If a previous location was clicked, it removes the class with the styling indicating selection
     deselect_previous_location()
 
     // Indicates the newly selected node
-    $(this).addClass("selected");
-    $(this).attr('r', SELECTED_POINT_RADIUS);
-    previously_selected_location = $(this);
+    let forecast_point = $("#" + passed_forecast_point_id);
+    console.log(forecast_point);
+    forecast_point.addClass("selected");
+    forecast_point.attr('r', SELECTED_POINT_RADIUS);
+    previously_selected_location = forecast_point;
 
     // Prepares the data to request
-    const data = $(this)[0].__data__;
+    const data = forecast_point[0].__data__;
     const location_id = data.id;
     get_location_data_for_id(location_id);
 }
@@ -180,8 +188,8 @@ function get_forecast_for_postcode() {
         data: JSON.stringify({
             'postcode': $('.postcode_input').val()
         }),
-        success: function (result) {
-            $('#forecast_data').html(result);
+        success: function (returned_forecast_point_id) {
+            handle_forecast_location_select(returned_forecast_point_id);
         }
     });
 }
