@@ -1,20 +1,13 @@
 from .postcode_functions import clean_postcode
-
-# from typing import NamedTuple
 from pydantic import BaseModel
 import csv
 import os
-import time
 
 
 class PostcodeResolver:
     def __init__(self):
         self.data_dict: dict = {}
-        start_time = time.time()
-        print("init")
         self.__read_in_csv_data()
-        print("Read in time: ", time.time() - start_time, "s")
-        print("finished")
 
     def __read_in_csv_data(self):
         dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -23,7 +16,7 @@ class PostcodeResolver:
             for row in reader:
                 shortened_postcode = row[0].replace(" ", "")
                 self.data_dict[shortened_postcode] = Postcode(
-                    postcode=shortened_postcode, lat=float(row[1]), long=float(row[2])
+                    postcode=shortened_postcode, lat=row[1], long=row[2]
                 )
 
     def get_lat_long_for_postcode(self, postcode: str):

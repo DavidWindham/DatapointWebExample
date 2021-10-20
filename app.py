@@ -39,7 +39,6 @@ def get_forecast_for_location_id():
 @datapoint_webapp.route("/get_forecast_location_for_postcode", methods=["POST"])
 def get_forecast_location_for_postcode():
     passed_postcode = request.json["postcode"]
-    print(passed_postcode)
     postcode_lat, postcode_long = postcode_resolver.get_lat_long_for_postcode(
         passed_postcode
     )
@@ -51,5 +50,5 @@ def get_forecast_location_for_postcode():
     )
 
 
-if __name__ == "__main__":
-    datapoint_webapp.run(host="0.0.0.0", port=5000)
+# if __name__ == "__main__":
+#     datapoint_webapp.run(host="0.0.0.0", port=5000, debug=True)

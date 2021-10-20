@@ -1,2 +1,3 @@
 def clean_postcode(dirty_postcode: str) -> str:
-    return dirty_postcode
+    cleaned_postcode = dirty_postcode.replace(" ", "").upper()
+    return cleaned_postcode

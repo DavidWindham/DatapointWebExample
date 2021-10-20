@@ -187,5 +187,3 @@ function get_forecast_for_postcode() {
 }
 
 window.get_forecast_for_postcode = get_forecast_for_postcode;
-
-let test_let = "test_var_is_here";
