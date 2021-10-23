@@ -17,4 +17,7 @@
   display: flex;
   margin-top: 1em;
   padding-bottom: 1em;
+  @media only screen and (max-width: $medium-screen-width) {
+    padding-bottom: 0.2em;
+  }
 }

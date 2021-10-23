@@ -13,12 +13,24 @@ datapoint_webapp = Flask(__name__)
 
 @datapoint_webapp.route("/")
 def index():
-    return render_template("forecast_ui.html")
+    max_number_of_forecast_locations = len(datapoint_handler.get_forecast_locations())
+    return render_template(
+        "forecast_ui.html",
+        max_number_of_forecast_locations=max_number_of_forecast_locations,
+    )
 
 
 @datapoint_webapp.route("/get_forecast_locations", methods=["POST"])
 def get_forecast_locations():
     return json.dumps(datapoint_handler.get_forecast_locations())
+
+
+@datapoint_webapp.route("/get_limited_forecast_locations", methods=["POST"])
+def get_limited_forecast_locations():
+    number_of_points_to_get = int(request.json["num_points"])
+    return_points = datapoint_handler.get_forecast_locations()
+    del return_points[number_of_points_to_get:]
+    return json.dumps(return_points)
 
 
 @datapoint_webapp.route("/get_historic_locations", methods=["POST"])

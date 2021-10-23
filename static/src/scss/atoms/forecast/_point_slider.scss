@@ -1,0 +1,40 @@
+.forecast-range-indicator {
+  @include center-text();
+  font-size: 1.5em;
+  @media only screen and (max-width: $medium-screen-width) {
+    font-size: 1em;
+  }
+}
+
+.forecast_points_slider {
+  width: 95%;
+  height: 1.5em;
+  -webkit-appearance: none;
+  background: $slider-background-colour;
+  outline: none;
+  border-radius: 1.5em;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+
+  @media only screen and (max-width: $small-screen-width) {
+    height: 1em;
+    border-radius: 1em;
+  }
+}
+
+.forecast_points_slider::-webkit-slider-thumb,
+.forecast_points_slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 1.5em;
+  background: $slider-thumb-background-colour;
+  cursor: pointer;
+  box-shadow: -407px 0 0 400px $slider-thumb-shadow-colour;
+
+  @media only screen and (max-width: $small-screen-width) {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+  }
+}

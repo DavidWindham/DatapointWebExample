@@ -4,19 +4,21 @@
 .forecast-aside {
   min-width: 550px;
   width: 30%;
+  background-color: $forecast-aside-background-color;
+  border-left: $forecast-aside-border;
 
   @media only screen and (max-width: $medium-screen-width) {
     min-width: 100%;
     width: 100%;
-    height: 40%;
+    height: 60%;
+    border-left: none;
   }
 
   @media only screen and (max-width: $small-screen-width) {
     height: 60%;
   }
 
-  background-color: $forecast-aside-background-color;
-  border-left: $forecast-aside-border;
+
 }
 
 .forecast-days-section { // The section where the pilled table is stored
