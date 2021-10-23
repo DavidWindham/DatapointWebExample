@@ -25,6 +25,9 @@ class PostcodeResolver:
         return postcode_obj.lat, postcode_obj.long
 
 
-class Postcode(NamedTuple):
-    lat: float
-    long: float
+class Postcode:
+    __slots__ = "lat", "long"
+
+    def __init__(self, lat, long):
+        self.lat: float = lat
+        self.long: float = long
