@@ -56,14 +56,22 @@ def get_forecast_for_location_id():
 @datapoint_webapp.route("/get_forecast_location_for_postcode", methods=["POST"])
 def get_forecast_location_for_postcode():
     passed_postcode = request.json["postcode"]
-    postcode_lat, postcode_long = postcode_resolver.get_lat_long_for_postcode(
-        passed_postcode
-    )
-    return json.dumps(
-        datapoint_handler.get_forecast_location_for_coordinates(
-            postcode_lat, postcode_long
+    try:
+        postcode_lat, postcode_long = postcode_resolver.get_lat_long_for_postcode(
+            passed_postcode
         )
-    )
+        return json.dumps(
+            datapoint_handler.get_forecast_location_for_coordinates(
+                postcode_lat, postcode_long
+            )
+        )
+    except KeyError:
+        return json.dumps(
+            {
+                "state": "failed",
+                "data": render_template("elements/error/postcode_fail.html"),
+            }
+        )
 
 
 if __name__ == "__main__":

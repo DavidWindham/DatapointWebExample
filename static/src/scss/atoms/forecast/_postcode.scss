@@ -17,6 +17,7 @@
 
   border-bottom: 0.3rem solid transparent;
   border-radius: $postcode-border-radius 0 0 $postcode-border-radius;
+  margin-left: 0.3rem;
 
   @media only screen and (max-width: $small-screen-width) {
     width: 60%

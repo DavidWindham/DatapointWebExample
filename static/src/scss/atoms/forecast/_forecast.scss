@@ -10,3 +10,26 @@
   color: $forecast-date-text;
   font-size: $font-size-large;
 }
+
+.forecast-header {
+  @include center-text;
+  color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: $font-size-large;
+
+  @media only screen and (max-width: $small-screen-width) {
+    font-size: $font-size-medium;
+  }
+}
+
+.forecast-information {
+  color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: $font-size-medium;
+
+  @media only screen and (max-width: $small-screen-width) {
+    font-size: $font-size-small;
+  }
+}

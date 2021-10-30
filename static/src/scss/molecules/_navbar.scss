@@ -1,20 +1,12 @@
 @import "../atoms/navbar";
 
-.nav-title-parent {
-  @include center-text();
+.navbar-title-parent {
   display: flex;
   align-content: center;
   padding: 1rem;
-}
+  width: 100%;
 
-.nav-credit-links {
-  @include center-text();
-  display: flex;
-  align-content: center;
-}
-
-.nav-left-links {
-  display: flex;
-  align-content: center;
-
+  @media only screen and (max-width: $small-screen-width) {
+    display: block;
+  }
 }

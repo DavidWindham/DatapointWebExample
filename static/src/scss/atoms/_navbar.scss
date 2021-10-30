@@ -1,15 +1,17 @@
-.nav-title {
+.navbar-title {
+  @include center-text;
   color: white;
   font-size: $font-size-large;
   margin: 0;
 }
 
-.nav-link {
-  @include hover-color-transition();
+.navbar-link {
+  @include hover-color-transition;
+  @include center-text;
   color: $navbar-link-base-text-color !important;
   font-size: $font-size-medium;
 
-  display: flex;
+  //display: flex;
   justify-content: center;
   align-items: center;
 

@@ -27,11 +27,23 @@ export class SliderClass {
     }
 
     forecast_slider_release = (self, num_points, callback) => {
+        this.disable_slider()
         this.forecast_slider_change();
         callback(num_points);
+        this.enable_slider();
     }
 
     forecast_slider_change = () => {
         this.mousemove_p.html(this.get_input_value() + "/" + this.max_num_forecast_locations + " forecast locations loaded");
+    }
+
+    disable_slider() {
+        this.element.disabled = true;
+        this.element.addClass("disabled-input");
+    }
+
+    enable_slider() {
+        this.element.disabled = false;
+        this.element.removeClass("disabled-input");
     }
 }

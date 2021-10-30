@@ -8,9 +8,9 @@ import {
 } from "../../map_auxillary";
 
 export class MapClass {
-    constructor(map_element, forecast_element) {
+    constructor(map_element, forecast_handler) {
         let self = this
-        self.forecast_element = forecast_element;
+        self.forecast_handler = forecast_handler;
         this.previously_selected_location;
 
         this.DEFAULT_POINT_RADIUS = 0.5
@@ -179,13 +179,14 @@ export class MapClass {
                 'location_id': location_id
             }),
             success: function (result) {
-                self.forecast_element.html(result);
+                self.forecast_handler.set_html(result);
             }
         });
     }
 
     get_forecast_for_postcode = (postcode) => {
         let self = this;
+        this.forecast_handler.clear_html();
         $.ajax({
             type: "POST",
             async: false,
@@ -194,8 +195,13 @@ export class MapClass {
             data: JSON.stringify({
                 'postcode': postcode
             }),
-            success: function (returned_forecast_point) {
-                self.handle_forecast_location_select(JSON.parse(returned_forecast_point));
+            success: function (returned_data) {
+                let returned_json = JSON.parse(returned_data)
+                if (returned_json['state'] === "failed") {
+                    self.forecast_handler.set_html(returned_json['data'])
+                } else {
+                    self.handle_forecast_location_select(returned_json);
+                }
             }
         });
     }
@@ -205,6 +211,7 @@ export class MapClass {
     }
 
     handle_mouse_click_on_location = (passed_point) => {
+        this.forecast_handler.clear_html();
         this.handle_forecast_location_select($(passed_point)[0].__data__);
     }
 

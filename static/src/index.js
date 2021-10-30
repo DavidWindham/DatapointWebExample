@@ -11,6 +11,7 @@ import {
     get_max_number_forecast_locations
 } from "./map_auxillary";
 
+import {ForecastClass} from "./js/forecast/forecast";
 import {MapClass} from "./js/map/map";
 import {SliderClass} from "./js/form/slider";
 import {PostcodeClass} from "./js/form/postcode";
@@ -18,10 +19,11 @@ import {handle_resize_functions} from "./js/window_resize";
 
 
 $(document).ready(function () {
+    let forecast_element = $("#forecast_data");
+    let forecast_handler = new ForecastClass(forecast_element);
 
     let map_element = $("#map_area");
-    let forecast_element = $("#forecast_data");
-    let map_handler = new MapClass(map_element, forecast_element);
+    let map_handler = new MapClass(map_element, forecast_handler);
 
     handle_resize_functions(map_handler.resize_svg, map_element);
 

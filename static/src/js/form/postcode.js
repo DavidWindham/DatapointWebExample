@@ -14,7 +14,6 @@ export class PostcodeClass {
     }
 
     get_forecast_for_postcode(callback) {
-        console.log("Called");
         this.disable_submit()
         let postcode = this.element.val();
         callback(postcode)

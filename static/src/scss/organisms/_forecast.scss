@@ -17,8 +17,6 @@
   @media only screen and (max-width: $small-screen-width) {
     height: 60%;
   }
-
-
 }
 
 .forecast-days-section { // The section where the pilled table is stored
@@ -28,4 +26,10 @@
 .tab-pane {
   overflow: auto;
   height: 100%;
+}
+
+.forecast-center-loader {
+  height: 300px;
+  align-content: center;
+  display: flex;
 }

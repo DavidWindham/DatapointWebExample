@@ -10,8 +10,6 @@
         </div>
         <div id="forecast_aside" class="forecast-aside">
             <div class="forecast-info-postcode-parent">
-                <p class="center-postcode-text">Enter Postcode below, or click a forecast location on the map. Use the
-                    slider to change the number of forecast locations.</p>
                 <div class="forecast-postcode-parent">
                     <form id="postcode_form">
                         <input id="postcode_input" class="postcode_input" placeholder="Enter Postcode"><button id="postcode_submit_button" class="postcode-submit-button">Submit</button>
@@ -23,7 +21,12 @@
                            class="forecast_points_slider" id="num_locations_input">
                 </div>
             </div>
-            <div id="forecast_data" class="forecast-data-parent"></div>
+            <div id="forecast_data" class="forecast-data-parent">
+                <h3 class="forecast-header">How To Use</h3>
+                <p class="forecast-information">Use the postcode input above to load the forecast from the closest forecast station</p>
+                <p class="forecast-information">Zoom in on the map and select a forecast station</p>
+                <p class="forecast-information">1000 forecast locations are loaded by default for performance reasons. Use the slider above to adjust the number of locations</p>
+            </div>
         </div>
     </div>
 {% endblock %}

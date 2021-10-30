@@ -1,28 +1,24 @@
 export class ForecastClass {
-    constructor(element, submit_callback) {
-        let self = this;
-        self.element = element;
+    constructor(element) {
+        this.element = element;
     }
 
-    load_data_into_element(passed_html){
-        self.element.innerHTML = passed_html;
-    }
-    remove_data_from_element(){
-
-    }
-    loading_state(){
-
+    set_html = (passed_html) => {
+        this.remove_loading_state();
+        this.element.html(passed_html);
     }
 
-
-    disable_submit = () => {
-        this.disabled = true;
-        this.element.disabled = true;
-        this.form_element.addClass("disabled-input");
+    clear_html = () => {
+        this.element.html("");
+        this.loading_state();
     }
-    enable_submit = () => {
-        this.disabled = false;
-        this.element.disabled = false;
-        this.form_element.removeClass("disabled-input");
+
+    loading_state() {
+        this.element.html("<div class='loader'/>")
+        this.element.addClass("forecast-center-loader");
+    }
+
+    remove_loading_state() {
+        this.element.removeClass("forecast-center-loader");
     }
 }
