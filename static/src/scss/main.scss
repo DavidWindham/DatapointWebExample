@@ -13,6 +13,9 @@
 @import "organisms/navbar";
 @import "organisms/weather";
 
+// Auxiliary classes
+@import "atoms/generic";
+
 // Bootstrap min required
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";

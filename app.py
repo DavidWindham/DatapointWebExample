@@ -20,6 +20,11 @@ def index():
     )
 
 
+@datapoint_webapp.route("/get_number_of_forecast_locations", methods=["GET"])
+def get_number_of_forecast_locations():
+    return json.dumps(len(datapoint_handler.get_forecast_locations()))
+
+
 @datapoint_webapp.route("/get_forecast_locations", methods=["POST"])
 def get_forecast_locations():
     return json.dumps(datapoint_handler.get_forecast_locations())
@@ -54,9 +59,11 @@ def get_forecast_location_for_postcode():
     postcode_lat, postcode_long = postcode_resolver.get_lat_long_for_postcode(
         passed_postcode
     )
-    return datapoint_handler.get_forecast_location_for_coordinates(
-        postcode_lat, postcode_long
-    )["id"]
+    return json.dumps(
+        datapoint_handler.get_forecast_location_for_coordinates(
+            postcode_lat, postcode_long
+        )
+    )
 
 
 if __name__ == "__main__":

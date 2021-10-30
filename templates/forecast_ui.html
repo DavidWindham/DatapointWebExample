@@ -3,31 +3,27 @@
 {% block body %}
     <div class="weather-container">
         <div class="map-area-parent">
-            <div id="map_area" class="map-area svg-container">
-
-            </div>
+            <div id="map_area" class="map-area svg-container"></div>
             <div class="map-bottom-area">
                 <p class="bottom-area-text" id="hover_county_text_p">⠀</p>
             </div>
         </div>
         <div id="forecast_aside" class="forecast-aside">
             <div class="forecast-info-postcode-parent">
-                <p class="center-postcode-text">Enter Postcode below, or click a forecast location on the map. Use the slider to change the number of forecast locations.</p>
+                <p class="center-postcode-text">Enter Postcode below, or click a forecast location on the map. Use the
+                    slider to change the number of forecast locations.</p>
                 <div class="forecast-postcode-parent">
-                    <form onsubmit="get_forecast_for_postcode(); return false">
-                        <input class="postcode_input" placeholder="Enter Postcode"><button class="postcode-submit-button" onclick="get_forecast_for_postcode()">Submit</button>
+                    <form id="postcode_form">
+                        <input id="postcode_input" class="postcode_input" placeholder="Enter Postcode"><button id="postcode_submit_button" class="postcode-submit-button">Submit</button>
                     </form>
                 </div>
                 <div class="forecast-points-selector-parent">
                     <span id="forecast_num_range" class="forecast-range-indicator"></span>
-                    <input type="range" min="1" max="{{ max_number_of_forecast_locations }}" value="250" class="forecast_points_slider" id="num_locations_input" onchange="update_forecast_points(this.value)" onmousemove="forecast_slider_change(this.value)">
+                    <input type="range" min="1" max="{{ max_number_of_forecast_locations }}" value="1000"
+                           class="forecast_points_slider" id="num_locations_input">
                 </div>
             </div>
             <div id="forecast_data" class="forecast-data-parent"></div>
         </div>
     </div>
-
-    <script>
-        window.max_num_forecast_locations = {{ max_number_of_forecast_locations }};
-    </script>
 {% endblock %}
