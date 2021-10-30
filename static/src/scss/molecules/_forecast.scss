@@ -8,9 +8,5 @@
   color: white;
   border-bottom: solid #C8D5B9;
   row-gap: 0;
-  grid-template-columns: 9em;
-
-  @media only screen and (max-width: $large-screen-width) {
-    grid-template-columns: 5em;
-  }
+  grid-template-columns: 20% 20% 20% 20% 20%;
 }
